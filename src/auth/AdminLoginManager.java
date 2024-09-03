@@ -89,10 +89,10 @@ public class AdminLoginManager {
 		} finally {
 			if (flag) {
 				transaction.commit();
-				System.out.println("Object saved....");		
+				System.out.println("User created....");		
 			} else {
 				transaction.rollback();
-				System.out.println("object not saved...");
+				System.out.println("Error...");
 			}
 			//HibernateUtil.closeSession(session);
 			//HibernateUtil.closeSessionFactory();
@@ -129,10 +129,10 @@ public class AdminLoginManager {
 		} finally {
 			if (flag) {
 				transaction.commit();
-				System.out.println("Object saved....");		
+				System.out.println("User created....");		
 			} else {
 				transaction.rollback();
-				System.out.println("object not saved...");
+				System.out.println("Error...");
 			}
 			//HibernateUtil.closeSession(session);
 			//HibernateUtil.closeSessionFactory();

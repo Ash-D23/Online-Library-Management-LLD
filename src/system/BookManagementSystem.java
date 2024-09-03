@@ -165,6 +165,13 @@ public class BookManagementSystem {
 		
 		// check if book id is present in user book list
 		
+		boolean isBookInUserBookList = user.checkMyBook(bookId);
+		
+		if(!isBookInUserBookList) {
+			System.out.println("Book is not user's");
+			return;
+		}
+		
 		Book book = inventory.getBook(bookId);
 		
 		FileOutputStream fos = null;

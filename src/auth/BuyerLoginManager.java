@@ -2,7 +2,6 @@ package auth;
 
 import java.util.Scanner;
 
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -14,7 +13,7 @@ public class BuyerLoginManager {
 	
 	private static BuyerLoginManager instance = null;
 	
-	private BuyerLoginStrategy loginStrategy;
+	private BuyerLoginStrategy loginStrategy = new BuyerPasswordStrategy();
 	
 	Session session = null;
 	Transaction transaction = null;
@@ -32,8 +31,7 @@ public class BuyerLoginManager {
 	}
 	
 	public BuyerUser login() {
-		
-		loginStrategy = new BuyerPasswordStrategy();
+
 		return loginStrategy.login();
 	}
 	

@@ -10,7 +10,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import util.BookUtil;
-import util.OrderUtil;
 
 @Entity
 public class BuyerUser extends User{
@@ -66,6 +65,19 @@ public class BuyerUser extends User{
 	
 	public void addBook(Book book) {
 		bookItems.add(book);
+	}
+
+	public boolean checkMyBook(int bookId) {
+		// TODO Auto-generated method stub
+		List<Book> booklist = new ArrayList<Book>(this.bookItems);
+		
+		for(Book book : booklist) {
+			if(book.getId() == bookId) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 	
 
